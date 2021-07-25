@@ -298,4 +298,4 @@ function doneLocalStorage() {
 
 doneLocalStorage()
 
-localStorage.clear();
+//localStorage.clear();
