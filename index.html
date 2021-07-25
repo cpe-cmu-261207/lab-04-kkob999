@@ -5,15 +5,39 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Add font -->
+
 	<script src='script.js' defer></script>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
 	<title>Lab 04</title>
-	<!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
+
+	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body>
-	<h1>Minimal Todo List</h1>
-	<input  type='text'>
-	<button>+</button>
+<body class="bg mt-16">
+	<div class="card">
+
+		<div id="all_sec2">
+
+			<h1 class="font1">Minimal Todo List</h1>
+			<input class="add" id="add" type='text'>
+			<button class="button" id="btn">+</button>
+
+			<div id="list">
+				<div class="flex"></div>
+			</div>
+			
+			<div id="del"></div>
+			<div id="done"></div>
+
+		</div>
+
+	</div>
+
 </body>
 
 </html>
