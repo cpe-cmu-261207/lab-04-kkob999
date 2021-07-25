@@ -1,5 +1,7 @@
 # lab 04 : JavaScript HTML DOM Programming 
 
+ https://cpe-cmu-261207.github.io/lab-04-kkob999/
+
 Note!: ตอนกดลบรายการ รายการที่ทำจะหายไปจาหหน้าจอ แต่รายการใน local storage จะเป็น null แต่พอ refresh ใหม่จะทำการลบรายการใน local storage ถาวร 
 
 

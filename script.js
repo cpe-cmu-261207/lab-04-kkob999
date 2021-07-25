@@ -5,6 +5,7 @@ const list = document.querySelector("#list");
 const delt = document.querySelector("#del");
 const done_sec = document.querySelector("#done")
 const flex = document.querySelector("#flex")
+const act = document.querySelector("#action")
 
 var el = document.getElementsByTagName('li');
 
@@ -17,9 +18,11 @@ btn.onclick = function () {
 
     var txt = input.value;
     if (txt == '') {
-        alert('you must write something');
+        alert('Task cannot be empty');
     } else {
         const mainDiv = document.createElement("div");
+        const txtDiv = document.createElement("div");
+        const buttDiv = document.createElement("div");
 
         mainDiv.setAttribute('class', 'flex')
         
@@ -28,7 +31,9 @@ btn.onclick = function () {
         text.innerHTML = txt;
         //input text to mainDiv
 
-        mainDiv.appendChild(text)
+        txtDiv.appendChild(text)
+        txtDiv.setAttribute('class', 'font2')
+        mainDiv.appendChild(txtDiv)
 
         mainDiv.setAttribute('class', 'card2_detail')
         mainDiv.setAttribute('class', 'flex')
@@ -58,7 +63,7 @@ btn.onclick = function () {
 
         checkbtn.addEventListener('click', () => {
 
-            text.setAttribute('class', 'complete')
+            txtDiv.setAttribute('class', 'font3')
             checkbtn.remove();
             delBtn.remove();
             //mainDiv.setAttribute('class', 'card2')
@@ -98,8 +103,9 @@ btn.onclick = function () {
 
         //show
         mainDiv.setAttribute('class', 'card2_detail')
-        mainDiv.append(delBtn) //add delete butt to mainDiv
-        mainDiv.append(checkbtn)
+        buttDiv.append(delBtn) //add delete butt to mainDiv
+        buttDiv.append(checkbtn)
+        mainDiv.append(buttDiv)
         list.append(mainDiv) //add mainDiv to list
         list.append(delt)
         list.insertBefore(mainDiv, list.childNodes[0])
@@ -149,16 +155,21 @@ function UiTodo() {
     localStorage.setItem("todos", JSON.stringify(newArr));
 
     todos.forEach(function (todo) {
-
+        //edit here
         const mainDiv = document.createElement("div");
+        const txtDiv = document.createElement("div");
+        const buttDiv = document.createElement("div");
         //text
         const text = document.createElement('div')
         text.innerHTML = todo;
         //console.log(todo)
         //input text to mainDiv
 
-        mainDiv.appendChild(text)
-        //mainDiv.setAttribute('class', 'card2')
+        //edit here
+        txtDiv.appendChild(text)
+        txtDiv.setAttribute('class', 'font2')
+        mainDiv.appendChild(txtDiv)
+        
 
 
         //delete butt
@@ -176,7 +187,7 @@ function UiTodo() {
         checkbtn.setAttribute('class', 'check-butt')
         checkbtn.addEventListener('click', () => {
 
-            text.setAttribute('class', 'complete')
+            txtDiv.setAttribute('class', 'font3')
             checkbtn.remove();
             delBtn.remove();
             // mainDiv.setAttribute('class', 'card3')
@@ -208,8 +219,11 @@ function UiTodo() {
         })
         mainDiv.setAttribute('class', 'card2_detail')
         //show
-        mainDiv.append(delBtn) //add delete butt to mainDiv
-        mainDiv.append(checkbtn)
+        // mainDiv.append(delBtn) //add delete butt to mainDiv
+        // mainDiv.append(checkbtn)
+        buttDiv.append(delBtn) //add delete butt to mainDiv
+        buttDiv.append(checkbtn)
+        mainDiv.append(buttDiv)
         list.append(mainDiv) //add mainDiv to list
         list.append(delt)
         list.insertBefore(mainDiv, list.childNodes[0])
@@ -263,13 +277,15 @@ function doneLocalStorage() {
     }
 
     doneTodo.forEach(function (todo) {
+        const txtDiv = document.createElement("div");
         const mainDiv = document.createElement("div");
         //text
-        const text = document.createElement('div')
-        text.innerHTML = todo;
-        text.setAttribute('class', 'complete')
+       
+        txtDiv.innerHTML = todo;
+        // text.setAttribute('class', 'complete')
+        txtDiv.setAttribute('class', 'font3')
 
-        mainDiv.appendChild(text)
+        mainDiv.appendChild(txtDiv)
         mainDiv.setAttribute('class', 'flex')
         mainDiv.setAttribute('class', 'card2_detail')
 
